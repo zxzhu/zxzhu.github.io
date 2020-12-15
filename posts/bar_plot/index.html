@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#" >
+    <meta charset="UTF-8" />
+
+    <meta name="generator" content="Hugo 0.78.2" /><meta name="theme-color" content="#fff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <title>柱状图 | zxzhu&#39;s blog</title>
+
+    <link rel="stylesheet" href="../../css/meme.min.99eb4c5171806b8216508d6820ac75441d2ea70bccf87a3fb1bb826a7fb5a256.css"/>
+
+    
+    
+        <script src="../../js/meme.min.434274bb2302fe029f98d3d29ae57dab1566be565436f52a6dd93089085533c4.js"></script>
+
+    
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" media="print" onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" /></noscript>
+
+    <meta name="author" content="zxzhu" /><meta name="description" content="柱状图是比较常用的图形，主要用于表示不同种类对象的数量。柱状图不适用于描述连续数据，……" />
+
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />
+    <link rel="mask-icon" href="../../icons/safari-pinned-tab.svg" color="#2a6df4" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="zxzhu&#39;s blog" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="zxzhu&#39;s blog" />
+    <meta name="msapplication-starturl" content="../../" />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="msapplication-TileImage" content="../../icons/mstile-150x150.png" />
+    <link rel="manifest" href="../../manifest.json" />
+
+    
+    
+
+    
+    <link rel="canonical" href="https://zxzhu.github.io/posts/bar_plot/" />
+    
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "datePublished": "2020-12-11T16:02:21+08:00",
+        "dateModified": "2020-12-11T16:17:29+08:00",
+        "url": "https://zxzhu.github.io/posts/bar_plot/",
+        "headline": "柱状图",
+        "description": "柱状图是比较常用的图形，主要用于表示不同种类对象的数量。柱状图不适用于描述连续数据，……",
+        "inLanguage" : "zh-CN",
+        "articleSection": "posts",
+        "wordCount":  2252 ,
+        "image": ["https://www.r-graph-gallery.com/218-basic-barplots-with-ggplot2_files/figure-html/thecode-1.png","https://cdn.jsdelivr.net/gh/zxzhu/myPicGo/img/R_graphics_cookbook/geom_bar_count.png","https://r-graphics.org/R-Graphics-Cookbook-2e_files/figure-html/FIG-BAR-GRAPH-BASIC-BAR-CONT-1.png","https://r-graphics.org/R-Graphics-Cookbook-2e_files/figure-html/FIG-BAR-GRAPH-BASIC-BAR-CONT-2.png","https://cdn.jsdelivr.net/gh/zxzhu/myPicGo/img/R_graphics_cookbook/group_bar.png","https://r-graphics.org/R-Graphics-Cookbook-2e_files/figure-html/FIG-BAR-GRAPH-FILL-1.png","https://cdn.jsdelivr.net/gh/zxzhu/myPicGo/img/R_graphics_cookbook/geom_col_reorder.png","https://cdn.jsdelivr.net/gh/zxzhu/myPicGo/img/R_graphics_cookbook/RcolorBrewer.png","https://r-graphics.org/R-Graphics-Cookbook-2e_files/figure-html/FIG-BAR-GRAPH-FILL-MANUAL-1.png","https://cdn.jsdelivr.net/gh/zxzhu/myPicGo/img/R_graphics_cookbook/col_manual_brewer.png","https://r-graphics.org/R-Graphics-Cookbook-2e_files/figure-html/FIG-BAR-GRAPH-COLOR-NEG2-1.png","https://r-graphics.org/R-Graphics-Cookbook-2e_files/figure-html/FIG-BAR-WIDTH-DODGE-1.png","https://r-graphics.org/R-Graphics-Cookbook-2e_files/figure-html/FIG-BAR-WIDTH-DODGE-2.png","https://r-graphics.org/R-Graphics-Cookbook-2e_files/figure-html/FIG-BAR-GRAPH-STACKED-BAR-COLORS-1.png","https://r-graphics.org/R-Graphics-Cookbook-2e_files/figure-html/FIG-BAR-GRAPH-STACKED-BAR-REVSTACK-1.png","https://cdn.jsdelivr.net/gh/zxzhu/myPicGo/img/R_graphics_cookbook/geom_col_stack_percent.png","https://r-graphics.org/R-Graphics-Cookbook-2e_files/figure-html/FIG-BAR-LABEL-GROUPED-1.png","https://cdn.jsdelivr.net/gh/zxzhu/myPicGo/img/R_graphics_cookbook/geom_col_stack_label.png","https://cdn.jsdelivr.net/gh/zxzhu/myPicGo/img/R_graphics_cookbook/geom_col_stack_label2.png"],
+        "author": {
+            "@type": "Person",
+            "description": "motto",
+            "email": "hzauzxzhu@gmail.com",
+            "image": "https://zxzhu.github.io/icons/apple-touch-icon.png",
+            "url": "https://zxzhu.github.io",
+            "name": "zxzhu"
+        },
+        "license": "保留本文作者及本文链接的前提下，非商业用途随意转载分享。",
+        "publisher": {
+            "@type": "Organization",
+            "name": "zxzhu's blog",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://zxzhu.github.io/icons/apple-touch-icon.png"
+            },
+            "url": "https://zxzhu.github.io/"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebSite",
+            "@id": "https://zxzhu.github.io/"
+        }
+    }
+</script>
+
+    
+
+<meta name="twitter:card" content="summary_large_image" />
+
+
+<meta name="twitter:site" content="@zxzhu" />
+
+    
+
+
+
+<meta property="og:title" content="柱状图" />
+<meta property="og:description" content="柱状图是比较常用的图形，主要用于表示不同种类对象的数量。柱状图不适用于描述连续数据，……" />
+<meta property="og:url" content="https://zxzhu.github.io/posts/bar_plot/" />
+<meta property="og:site_name" content="zxzhu&#39;s blog" />
+<meta property="og:locale" content="zh" /><meta property="og:image" content="https://www.r-graph-gallery.com/218-basic-barplots-with-ggplot2_files/figure-html/thecode-1.png" />
+<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2020-12-11T16:02:21&#43;08:00" />
+    <meta property="article:modified_time" content="2020-12-11T16:17:29&#43;08:00" />
+    
+    <meta property="article:section" content="posts" />
+
+
+
+    
+</head>
+
+    <body>
+        <div class="container">
+            
+    <header class="header">
+        
+            <div class="header-wrapper">
+                <div class="header-inner single">
+                    
+    <div class="site-brand">
+        
+            <a href="../../" class="brand">zxzhu&#39;s blog</a>
+        
+    </div>
+
+                    <nav class="nav">
+    <ul class="menu" id="menu">
+        
+            
+        
+        
+        
+        
+            
+                <li class="menu-item"><a href="../../"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="icon home"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"/></svg><span class="menu-item-name">首页</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item active"><a href="../../posts/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon archive"><path d="M32 448c0 17.7 14.3 32 32 32h384c17.7 0 32-14.3 32-32V160H32v288zm160-212c0-6.6 5.4-12 12-12h104c6.6 0 12 5.4 12 12v8c0 6.6-5.4 12-12 12H204c-6.6 0-12-5.4-12-12v-8zM480 32H32C14.3 32 0 46.3 0 64v48c0 8.8 7.2 16 16 16h480c8.8 0 16-7.2 16-16V64c0-17.7-14.3-32-32-32z"/></svg><span class="menu-item-name">文章</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="../../categories/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon th"><path d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"/></svg><span class="menu-item-name">分类</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="../../tags/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="icon tags"><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/></svg><span class="menu-item-name">标签</span></a>
+                </li>
+            
+        
+            
+                <li class="menu-item"><a href="../../about/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="icon user-circle"><path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z"/></svg><span class="menu-item-name">关于</span></a>
+                </li>
+            
+        
+    </ul>
+</nav>
+
+                    
+                </div>
+            </div>
+            
+    <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+    <label for="nav-toggle" class="nav-toggle"></label>
+    <label for="nav-toggle" class="nav-curtain"></label>
+
+
+        
+    </header>
+
+
+
+
+            
+            
+    <main class="main single" id="main">
+    <div class="main-inner">
+
+        
+
+        <article class="content post h-entry" data-align="justify" data-type="posts" data-toc-num="true">
+
+            <h1 class="post-title p-name">柱状图</h1>
+
+            
+
+            
+                
+            
+
+            
+                
+
+<div class="post-meta">
+    
+        
+        <time datetime="2020-12-11T16:02:21&#43;08:00" class="post-meta-item published dt-published"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon post-meta-icon"><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;2020.12.11</time>
+    
+    
+    
+    
+        
+        
+        
+            
+                <span class="post-meta-item category"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon post-meta-icon"><path d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"/></svg>&nbsp;<a href="../../categories/bioinformatics/" class="category-link p-category">Bioinformatics</a></span>
+            
+        
+    
+    
+    
+    
+        
+            
+            <span class="post-meta-item busuanzi-page-pv" id="busuanzi_container_page_pv"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="icon post-meta-icon"><path d="M288 144a110.94 110.94 0 0 0-31.24 5 55.4 55.4 0 0 1 7.24 27 56 56 0 0 1-56 56 55.4 55.4 0 0 1-27-7.24A111.71 111.71 0 1 0 288 144zm284.52 97.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400c-98.65 0-189.09-55-237.93-144C98.91 167 189.34 112 288 112s189.09 55 237.93 144C477.1 345 386.66 400 288 400z"/></svg>&nbsp;<span id="busuanzi_value_page_pv"></span></span>
+        
+    
+    
+</div>
+
+            
+
+            <div class="post-body e-content">
+              <p>柱状图是比较常用的图形，主要用于表示<strong>不同种类</strong>对象的<strong>数量</strong>。柱状图不适用于描述连续数据，最好用来描述不同类别的数据。描述数量时，这里包含两种想法，一是描述某类对象本身特征的数据（identity），二是描述某类对象总量的数据（count）。画图时要区分两者。</p>
+<h3 id="basic-bar-graph"><a href="#basic-bar-graph" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Basic Bar Graph</h3>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#34;A&#34;</span><span class="p">,</span><span class="s">&#34;B&#34;</span><span class="p">,</span><span class="s">&#34;C&#34;</span><span class="p">,</span><span class="s">&#34;D&#34;</span><span class="p">,</span><span class="s">&#34;E&#34;</span><span class="p">),</span> <span class="n">value</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">12</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">18</span><span class="p">,</span><span class="m">45</span><span class="p">))</span>
+<span class="n">data</span> <span class="o">%&gt;%</span> <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">name</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">value</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_bar</span><span class="p">(</span><span class="n">stat</span> <span class="o">=</span> <span class="s">&#39;identity&#39;</span><span class="p">)</span>           <span class="c1"># left</span>
+<span class="c1"># data %&gt;% ggplot(aes(x = name, y = value)) + geom_col()</span>
+<span class="n">data</span> <span class="o">%&gt;%</span> <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">name</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_bar</span><span class="p">()</span>             <span class="c1"># right; stat = &#39;count&#39;</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><center>
+    <img src="https://www.r-graph-gallery.com/218-basic-barplots-with-ggplot2_files/figure-html/thecode-1.png" alt="basic_bar" width="40%"> <img src="https://cdn.jsdelivr.net/gh/zxzhu/myPicGo/img/R_graphics_cookbook/geom_bar_count.png" alt="bar_count" width="40%"> 
+    <p>
+        left: stat_identity, right: stat_count
+    </p>
+</center>
+<h4 id="when-x-is-a-continuous-or-numeric-variable"><a href="#when-x-is-a-continuous-or-numeric-variable" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>When x is a continuous (or numeric) variable</h4>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">BOD</span>
+<span class="c1">#   Time demand</span>
+<span class="c1"># 1    1    8.3</span>
+<span class="c1"># 2    2   10.3</span>
+<span class="c1"># 3    3   19.0</span>
+<span class="c1"># 4    4   16.0</span>
+<span class="c1"># 5    5   15.6</span>
+<span class="c1"># 6    7   19.8</span>
+<span class="nf">str</span><span class="p">(</span><span class="n">BOD</span><span class="p">)</span>
+<span class="c1"># &#39;data.frame&#39;:   6 obs. of  2 variables:</span>
+<span class="c1">#  $ Time  : num  1 2 3 4 5 7</span>
+<span class="c1">#  $ demand: num  8.3 10.3 19 16 15.6 19.8</span>
+<span class="c1">#  - attr(*, &#34;reference&#34;)= chr &#34;A1.4, p. 270&#34;</span>
+<span class="n">BOD</span> <span class="o">%&gt;%</span> <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Time</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">demand</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_col</span><span class="p">()</span>          <span class="c1"># continuous</span>
+<span class="n">BOD</span> <span class="o">%&gt;%</span> <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span><span class="n">Time</span><span class="p">),</span> <span class="n">y</span> <span class="o">=</span> <span class="n">demand</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_col</span><span class="p">()</span>  <span class="c1"># factor; discrete</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><center>
+    <img src="https://r-graphics.org/R-Graphics-Cookbook-2e_files/figure-html/FIG-BAR-GRAPH-BASIC-BAR-CONT-1.png" alt="continuous bar" width=40%> <img src="https://r-graphics.org/R-Graphics-Cookbook-2e_files/figure-html/FIG-BAR-GRAPH-BASIC-BAR-CONT-2.png" alt="continuous bar" width=40%>
+    <p>
+        left: continuous, right: discrete
+    </p>
+</center>
+<p><code>geom_bar()</code> 的结果类似。当画柱状图时，注意确保分类变量为因子类型。</p>
+<hr>
+<p>以上就是 ggplot2 里面基本的柱状图画法了，这里就会自然想到一些关于柱状图的问题：</p>
+<ul>
+<li>可以换颜色吗？</li>
+<li>可以调整柱子宽度和间隔吗？</li>
+<li>可以调整柱子从左至右的顺序吗？123457 变成754321?</li>
+<li>可以把XY轴换一下吗？</li>
+<li>1个类别有多个数据想画柱状图怎么办？即分组画图，上色，注释等</li>
+</ul>
+<h3 id="grouping-bars-together"><a href="#grouping-bars-together" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Grouping Bars Together</h3>
+<p>很多情况下，数据的分类变量有2个而非1个。画柱状图时，我们将1个分类变量分配到X轴，另一个分类变量就可以分配给颜色，这样比较起来就比较直观了。</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">data</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span>
+  <span class="n">specie</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="s">&#34;sorgho&#34;</span> <span class="p">,</span> <span class="m">10</span><span class="p">)</span> <span class="p">,</span> <span class="nf">rep</span><span class="p">(</span><span class="s">&#34;poacee&#34;</span> <span class="p">,</span> <span class="m">10</span><span class="p">)</span> <span class="p">),</span>
+  <span class="n">cond_A</span><span class="o">=</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">20</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">4</span><span class="p">),</span>
+  <span class="n">cond_B</span><span class="o">=</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">20</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">3</span><span class="p">),</span>
+  <span class="n">cond_C</span><span class="o">=</span><span class="nf">rnorm</span><span class="p">(</span><span class="m">20</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">4</span><span class="p">)</span>
+<span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">pivot_longer</span><span class="p">(</span><span class="n">cond_A</span><span class="o">:</span><span class="n">cond_C</span><span class="p">,</span> <span class="n">names_to</span> <span class="o">=</span> <span class="s">&#39;condition&#39;</span><span class="p">,</span> <span class="n">values_to</span> <span class="o">=</span> <span class="s">&#39;value&#39;</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+<span class="nf">group_by</span><span class="p">(</span><span class="n">specie</span><span class="p">,</span> <span class="n">condition</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">summarise</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">value</span><span class="p">),</span> <span class="n">sd</span><span class="o">=</span><span class="nf">sd</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+<span class="n">data</span>
+<span class="c1"># A tibble: 6 x 4</span>
+<span class="c1"># Groups:   specie [2]</span>
+<span class="c1">#   specie condition height    sd</span>
+<span class="c1">#   &lt;fct&gt;  &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;</span>
+<span class="c1"># 1 poacee cond_A     11.4   3.23</span>
+<span class="c1"># 2 poacee cond_B      8.92  2.75</span>
+<span class="c1"># 3 poacee cond_C      2.79  4.38</span>
+<span class="c1"># 4 sorgho cond_A      9.81  4.73</span>
+<span class="c1"># 5 sorgho cond_B      8.25  3.99</span>
+<span class="c1"># 6 sorgho cond_C      3.78  4.81</span>
+<span class="n">data</span> <span class="o">%&gt;%</span> <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">condition</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">height</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">specie</span><span class="p">))</span> <span class="o">+</span> 
+<span class="nf">geom_col</span><span class="p">(</span><span class="n">position</span> <span class="o">=</span> <span class="s">&#39;dodge&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><img src="https://cdn.jsdelivr.net/gh/zxzhu/myPicGo/img/R_graphics_cookbook/group_bar.png" alt="group_bar" width=40% /></p>
+<p>实际上，我们可以将另一个分类变量映射到color或者linetype上，不过映射到fill是最直观的。那么我们又自然想到一些问题：</p>
+<ul>
+<li>柱状图上可以加数字或者error bar 吗？</li>
+<li>颜色映射有默认值，如何自己赋值？</li>
+<li>右侧的图例自己出现了，可以控制吗？</li>
+</ul>
+<h3 id="using-colors-in-a-bar-graph"><a href="#using-colors-in-a-bar-graph" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Using Colors in a Bar Graph</h3>
+<p>如果需要在柱状图上添加颜色的话，我们可以通过将颜色映射到 fill 上来实现。</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">library</span><span class="p">(</span><span class="n">gcookbook</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">uspopchang</span><span class="p">)</span>
+<span class="c1">#        State Abb Region Change</span>
+<span class="c1"># 1    Alabama  AL  South    7.5</span>
+<span class="c1"># 2     Alaska  AK   West   13.3</span>
+<span class="c1"># 3    Arizona  AZ   West   24.6</span>
+<span class="c1"># 4   Arkansas  AR  South    9.1</span>
+<span class="c1"># 5 California  CA   West   10.0</span>
+<span class="c1"># 6   Colorado  CO   West   16.9</span>
+<span class="n">uspopchange</span> <span class="o">%&gt;%</span> <span class="nf">arrange</span><span class="p">(</span><span class="nf">desc</span><span class="p">(</span><span class="n">Change</span><span class="p">))</span> <span class="o">%&gt;%</span> <span class="nf">slice</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+<span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Abb</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Change</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">Region</span><span class="p">))</span> <span class="o">+</span> 
+<span class="nf">geom_col</span><span class="p">()</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><img src="https://r-graphics.org/R-Graphics-Cookbook-2e_files/figure-html/FIG-BAR-GRAPH-FILL-1.png" alt="geom_col_color" width=50% /></p>
+<p>这里有两个问题：柱子可以用Change来排序吗？颜色如何自己赋值？</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">topc</span> <span class="o">%&gt;%</span> <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="nf">reorder</span><span class="p">(</span><span class="n">Abb</span><span class="p">,</span> <span class="n">Change</span><span class="p">),</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Change</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">Region</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_col</span><span class="p">()</span>
+<span class="c1"># 对 Abb这个因子按照Change重新排序后，ggplot画图就不会用默认的字母排序顺序了</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><img src="https://cdn.jsdelivr.net/gh/zxzhu/myPicGo/img/R_graphics_cookbook/geom_col_reorder.png" alt="geom_col_reorder" width=50% /></p>
+<p>接下来是自定义颜色的问题，ggplot肯定默认有一组颜色，当然也提供了 <code>scale_fill_brewer</code> 以及 <code>scale_fill_manual</code> 两个函数，前者是定义好的一些颜色，后者接受颜色代码。对于前者，我们可以直接打印出来，可以参考 <a href="https://colorbrewer2.org/" target="_blank" rel="noopener">ColorBrewer: Color Advice for Maps (colorbrewer2.org)</a> 网页来选择颜色。</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">RColorBrewer</span><span class="o">::</span><span class="nf">display.brewer.all</span><span class="p">()</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><img src="https://cdn.jsdelivr.net/gh/zxzhu/myPicGo/img/R_graphics_cookbook/RcolorBrewer.png" alt="RColorBrewer" width=50% /></p>
+<p>后一种的话，可以用十六进制颜色代码。</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">topc</span> <span class="o">%&gt;%</span> <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="nf">reorder</span><span class="p">(</span><span class="n">Abb</span><span class="p">,</span> <span class="n">Change</span><span class="p">),</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Change</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">Region</span><span class="p">))</span> <span class="o">+</span> 
+	<span class="nf">geom_col</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">)</span> <span class="o">+</span> 
+	<span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;#669933&#34;</span><span class="p">,</span> <span class="s">&#34;#FFCC66&#34;</span><span class="p">))</span> <span class="o">+</span> 
+	<span class="nf">xlab</span><span class="p">(</span><span class="s">&#34;State&#34;</span><span class="p">)</span>              <span class="c1"># 1</span>
+<span class="n">topc</span> <span class="o">%&gt;%</span> <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="nf">reorder</span><span class="p">(</span><span class="n">Abb</span><span class="p">,</span> <span class="n">Change</span><span class="p">),</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Change</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">Region</span><span class="p">))</span> <span class="o">+</span> 
+	<span class="nf">geom_col</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">)</span> <span class="o">+</span> 
+	<span class="nf">scale_fill_brewer</span><span class="p">(</span><span class="n">palette</span> <span class="o">=</span> <span class="s">&#34;Dark2&#34;</span><span class="p">)</span> <span class="o">+</span> 
+	<span class="nf">xlab</span><span class="p">(</span><span class="s">&#34;State&#34;</span><span class="p">)</span>            <span class="c1"># 2</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><center>
+    <img src="https://r-graphics.org/R-Graphics-Cookbook-2e_files/figure-html/FIG-BAR-GRAPH-FILL-MANUAL-1.png" alt="col_manual_fill" width=40% /> <img src="https://cdn.jsdelivr.net/gh/zxzhu/myPicGo/img/R_graphics_cookbook/col_manual_brewer.png" alt="col_scale_brewer" width=40% />
+</center>
+<h3 id="coloring-negative-and-positive-bars-differently"><a href="#coloring-negative-and-positive-bars-differently" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Coloring Negative and Positive Bars Differently</h3>
+<p>有时候，我们可能会有正负数据，这时用柱状图也是可以的。</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">head</span><span class="p">(</span><span class="n">climate</span><span class="p">)</span>
+<span class="c1">#     Source Year Anomaly1y Anomaly5y Anomaly10y Unc10y</span>
+<span class="c1"># 1 Berkeley 1800        NA        NA     -0.435  0.505</span>
+<span class="c1"># 2 Berkeley 1801        NA        NA     -0.453  0.493</span>
+<span class="c1"># 3 Berkeley 1802        NA        NA     -0.460  0.486</span>
+<span class="c1"># 4 Berkeley 1803        NA        NA     -0.493  0.489</span>
+<span class="c1"># 5 Berkeley 1804        NA        NA     -0.536  0.483</span>
+<span class="c1"># 6 Berkeley 1805        NA        NA     -0.541  0.475</span>
+
+<span class="n">climate</span> <span class="o">%&gt;%</span> <span class="nf">filter</span><span class="p">(</span><span class="n">Source</span> <span class="o">==</span> <span class="s">&#34;Berkeley&#34;</span> <span class="o">&amp;</span> <span class="n">Year</span> <span class="o">&gt;</span> <span class="m">1900</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+	<span class="nf">mutate</span><span class="p">(</span><span class="n">pos</span> <span class="o">=</span> <span class="n">Anomaly10y</span> <span class="o">&gt;=</span> <span class="m">0</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+	<span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Year</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Anomaly10y</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">pos</span><span class="p">))</span> <span class="o">+</span> 
+	<span class="nf">geom_col</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s">&#39;black&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">0.25</span><span class="p">,</span> <span class="n">position</span> <span class="o">=</span> <span class="s">&#39;identity&#39;</span><span class="p">)</span> <span class="o">+</span> 
+	<span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;#CCEEFF&#34;</span><span class="p">,</span> <span class="s">&#34;#FFDDDD&#34;</span><span class="p">),</span> <span class="n">guide</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><img src="https://r-graphics.org/R-Graphics-Cookbook-2e_files/figure-html/FIG-BAR-GRAPH-COLOR-NEG2-1.png" alt="col_pos_neg" width=80% /></p>
+<p>这里正负轴已经可以代表“正负”含义了，因此，去掉了图例。</p>
+<h3 id="adjusting-bar-width-and-spacing"><a href="#adjusting-bar-width-and-spacing" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Adjusting Bar Width and Spacing</h3>
+<p>柱状图的柱子宽度以及柱子间的距离怎么调？</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">cabbage_exp</span>
+<span class="c1">#   Cultivar Date Weight        sd  n         se</span>
+<span class="c1"># 1      c39  d16   3.18 0.9566144 10 0.30250803</span>
+<span class="c1"># 2      c39  d20   2.80 0.2788867 10 0.08819171</span>
+<span class="c1"># 3      c39  d21   2.74 0.9834181 10 0.31098410</span>
+<span class="c1"># 4      c52  d16   2.26 0.4452215 10 0.14079141</span>
+<span class="c1"># 5      c52  d20   3.11 0.7908505 10 0.25008887</span>
+<span class="c1"># 6      c52  d21   1.47 0.2110819 10 0.06674995</span>
+
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">cabbage_exp</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Date</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Weight</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">Cultivar</span><span class="p">))</span> <span class="o">+</span> 
+	<span class="nf">geom_col</span><span class="p">(</span><span class="n">width</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span> <span class="n">position</span> <span class="o">=</span> <span class="s">&#34;dodge&#34;</span><span class="p">)</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">cabbage_exp</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Date</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Weight</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">Cultivar</span><span class="p">))</span> <span class="o">+</span>
+	<span class="nf">geom_col</span><span class="p">(</span><span class="n">width</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span> <span class="n">position</span> <span class="o">=</span> <span class="nf">position_dodge</span><span class="p">(</span><span class="m">0.7</span><span class="p">))</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><center>
+    <img src="https://r-graphics.org/R-Graphics-Cookbook-2e_files/figure-html/FIG-BAR-WIDTH-DODGE-1.png" alt="col_width" width=40%/> <img src="https://r-graphics.org/R-Graphics-Cookbook-2e_files/figure-html/FIG-BAR-WIDTH-DODGE-2.png" alt="col_width_position"  width=40% />
+</center>
+<p><code>width</code> 控制柱子宽度，<code>position_dodge</code> 我理解为组内间距，默认与 <code>width</code> 值相同。两者的默认值均为0.9。</p>
+<h3 id="making-a-stacked-bar-graph"><a href="#making-a-stacked-bar-graph" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Making a Stacked Bar Graph</h3>
+<p>有时候也需要把柱子堆起来，我感觉一般用在百分比占比之类的数据上吧。这里也会产生几个问题：</p>
+<ul>
+<li>堆叠顺序</li>
+<li>纵轴百分比显示</li>
+<li>堆叠柱状图添加数字</li>
+</ul>
+<p>首先是基本的堆叠柱状图：</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">cabbage_exp</span> <span class="o">%&gt;%</span> <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Date</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Weight</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">Cultivar</span><span class="p">))</span> <span class="o">+</span> 
+	<span class="nf">geom_col</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s">&#39;black&#39;</span><span class="p">)</span> <span class="o">+</span>
+	<span class="nf">scale_fill_brewer</span><span class="p">(</span><span class="n">palette</span> <span class="o">=</span> <span class="s">&#39;Pastel1&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><img src="https://r-graphics.org/R-Graphics-Cookbook-2e_files/figure-html/FIG-BAR-GRAPH-STACKED-BAR-COLORS-1.png" alt="geom_col_stack" width=50% /></p>
+<p>这个图有两个分类变量，Date已经在X轴上了，前面演示过用 <code>reorder</code> 来改变顺序。Cultivar被映射到fill上了，它的顺序其实不是那么重要我感觉，只要是对的就可以。不过ggplot2提供了一个reverse选项可以让堆叠柱状图组内顺序反转。</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">ggplot</span><span class="p">(</span><span class="n">cabbage_exp</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Date</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Weight</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">Cultivar</span><span class="p">))</span> <span class="o">+</span>
+  <span class="nf">geom_col</span><span class="p">(</span><span class="n">position</span> <span class="o">=</span> <span class="nf">position_stack</span><span class="p">(</span><span class="n">reverse</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">))</span> <span class="o">+</span>
+  <span class="nf">guides</span><span class="p">(</span><span class="n">fill</span> <span class="o">=</span> <span class="nf">guide_legend</span><span class="p">(</span><span class="n">reverse</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">))</span>                      <span class="c1"># legend顺序反转 </span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><img src="https://r-graphics.org/R-Graphics-Cookbook-2e_files/figure-html/FIG-BAR-GRAPH-STACKED-BAR-REVSTACK-1.png" alt="geom_col_stack_reverse" width=50% /></p>
+<h3 id="making-a-proportional-stacked-bar-graph"><a href="#making-a-proportional-stacked-bar-graph" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Making a Proportional Stacked Bar Graph</h3>
+<p>堆叠图很多情况下用于百分比，那么问题就是如何显示百分比：</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">cabbage_exp</span> <span class="o">%&gt;%</span>
+	<span class="nf">group_by</span><span class="p">(</span><span class="n">Date</span><span class="p">)</span> <span class="o">%&gt;%</span>
+	<span class="nf">mutate</span><span class="p">(</span><span class="n">percent_weight</span> <span class="o">=</span> <span class="n">Weight</span> <span class="o">/</span> <span class="nf">sum</span><span class="p">(</span><span class="n">Weight</span><span class="p">))</span> <span class="o">%&gt;%</span>
+	<span class="nf">ggplot</span><span class="p">(</span><span class="n">ce</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Date</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">percent_weight</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">Cultivar</span><span class="p">))</span> <span class="o">+</span>
+	<span class="nf">geom_col</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">scale_y_continuous</span><span class="p">(</span><span class="n">labels</span> <span class="o">=</span> <span class="n">scales</span><span class="o">::</span><span class="n">percent</span><span class="p">)</span> <span class="o">+</span>
+	<span class="nf">scale_fill_brewer</span><span class="p">(</span><span class="n">palette</span> <span class="o">=</span> <span class="s">&#34;Pastel1&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><img src="https://cdn.jsdelivr.net/gh/zxzhu/myPicGo/img/R_graphics_cookbook/geom_col_stack_percent.png" alt="geom_col_stack_percent" width=50% /></p>
+<h3 id="adding-labels-to-a-bar-graph"><a href="#adding-labels-to-a-bar-graph" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a>Adding Labels to a Bar Graph</h3>
+<p>给柱子加标签需要两个数据，一是标签内容，二是标签位置。</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="nf">ggplot</span><span class="p">(</span><span class="n">cabbage_exp</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Date</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Weight</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">Cultivar</span><span class="p">))</span> <span class="o">+</span>
+  <span class="nf">geom_col</span><span class="p">(</span><span class="n">position</span> <span class="o">=</span> <span class="s">&#34;dodge&#34;</span><span class="p">)</span> <span class="o">+</span>
+  <span class="nf">geom_text</span><span class="p">(</span>
+    <span class="nf">aes</span><span class="p">(</span><span class="n">label</span> <span class="o">=</span> <span class="n">Weight</span><span class="p">),</span>
+    <span class="n">colour</span> <span class="o">=</span> <span class="s">&#34;white&#34;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span>
+    <span class="n">vjust</span> <span class="o">=</span> <span class="m">1.5</span><span class="p">,</span> <span class="n">position</span> <span class="o">=</span> <span class="nf">position_dodge</span><span class="p">(</span><span class="m">.9</span><span class="p">)</span>
+  <span class="p">)</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><img src="https://r-graphics.org/R-Graphics-Cookbook-2e_files/figure-html/FIG-BAR-LABEL-GROUPED-1.png" alt="geom_col_label" width=50% /></p>
+<p>各个参数作用比较明确。上面是dodge分布，如果是stack分布的话，加labels就需要进行一番计算了。</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">cabbage_exp</span> <span class="o">%&gt;%</span> <span class="nf">arrange</span><span class="p">(</span><span class="n">Date</span><span class="p">,</span> <span class="n">Cultivar</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+	<span class="nf">group_by</span><span class="p">(</span><span class="n">Date</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">label_y</span> <span class="o">=</span> <span class="nf">cumsum</span><span class="p">(</span><span class="n">Weight</span><span class="p">))</span>
+<span class="c1"># A tibble: 6 x 7</span>
+<span class="c1"># Groups:   Date [3]</span>
+<span class="c1">#   Cultivar Date  Weight    sd     n     se label_y</span>
+<span class="c1">#   &lt;fct&gt;    &lt;fct&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt;   &lt;dbl&gt;</span>
+<span class="c1"># 1 c39      d16     3.18 0.957    10 0.303     3.18</span>
+<span class="c1"># 2 c52      d16     2.26 0.445    10 0.141     5.44</span>
+<span class="c1"># 3 c39      d20     2.8  0.279    10 0.0882    2.8 </span>
+<span class="c1"># 4 c52      d20     3.11 0.791    10 0.250     5.91</span>
+<span class="c1"># 5 c39      d21     2.74 0.983    10 0.311     2.74</span>
+<span class="c1"># 6 c52      d21     1.47 0.211    10 0.0667    4.21</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p>经过一通乱算，可以得到标签位置 <code>label_y</code>，标签值 <code>Weight</code>。</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">cabbage_exp</span> <span class="o">%&gt;%</span> <span class="nf">arrange</span><span class="p">(</span><span class="n">Date</span><span class="p">,</span> <span class="n">Cultivar</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+	<span class="nf">group_by</span><span class="p">(</span><span class="n">Date</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">label_y</span> <span class="o">=</span> <span class="nf">cumsum</span><span class="p">(</span><span class="n">Weight</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+	<span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Date</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Weight</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">Cultivar</span><span class="p">))</span> <span class="o">+</span> 
+	<span class="nf">geom_col</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">scale_fill_brewer</span><span class="p">(</span><span class="n">palette</span> <span class="o">=</span> <span class="s">&#39;Pastel1&#39;</span><span class="p">)</span> <span class="o">+</span> 
+	<span class="nf">geom_text</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">label_y</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">Weight</span><span class="p">))</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><img src="https://cdn.jsdelivr.net/gh/zxzhu/myPicGo/img/R_graphics_cookbook/geom_col_stack_label.png" alt="geom_col_stack_label" width=50% /></p>
+<p>??发生甚么事了😕 图上的堆叠顺序和计算时的顺序反了所以标签位置有点问题。另外标签位置还需要上移或者下移一下。重来：</p>
+<div class="highlight"><div class="chroma">
+<div class="table-container"><table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-R" data-lang="R"><span class="n">cabbage_exp</span> <span class="o">%&gt;%</span> <span class="nf">arrange</span><span class="p">(</span><span class="n">Date</span><span class="p">,</span> <span class="nf">rev</span><span class="p">(</span><span class="n">Cultivar</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+    <span class="nf">group_by</span><span class="p">(</span><span class="n">Date</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">label_y</span> <span class="o">=</span> <span class="nf">cumsum</span><span class="p">(</span><span class="n">Weight</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+    <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Date</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Weight</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">Cultivar</span><span class="p">))</span> <span class="o">+</span> 
+    <span class="nf">geom_col</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">scale_fill_brewer</span><span class="p">(</span><span class="n">palette</span> <span class="o">=</span> <span class="s">&#39;Pastel1&#39;</span><span class="p">)</span> <span class="o">+</span> 
+    <span class="nf">geom_text</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">label_y</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">Weight</span><span class="p">),</span> <span class="n">vjust</span> <span class="o">=</span> <span class="m">-1</span><span class="p">)</span>
+</code></pre></td></tr></table></div>
+</div>
+</div><p><img src="https://cdn.jsdelivr.net/gh/zxzhu/myPicGo/img/R_graphics_cookbook/geom_col_stack_label2.png" alt="geom_col_stack_label2" width=50% /></p>
+<p>排序的时候把Cultivar反转一下，标签位置上调一下就OK了😉</p>
+
+            </div>
+
+            
+
+
+        </article>
+
+        
+
+        
+
+
+        
+
+
+        
+
+
+        
+    
+    
+
+
+
+        
+    
+        <div class="post-tags">
+            
+                
+                
+                
+                
+                    
+                    <a href="../../tags/ggplot2/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>ggplot2</a>
+                
+            
+                
+                
+                
+                
+                    
+                    <a href="../../tags/barplot/" rel="tag" class="post-tags-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon tag-icon"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg>barplot</a>
+                
+            
+        </div>
+    
+
+
+
+        
+
+
+        
+
+
+        
+    
+        
+        
+    
+    
+    
+    
+        <ul class="post-nav">
+            
+            
+                <li class="post-nav-next">
+                    <a href="../../posts/imgurl/" rel="next">用于Markdown的图床 &gt;</a>
+                </li>
+            
+        </ul>
+    
+
+
+
+        
+
+
+    </div>
+</main>
+
+
+            
+    <div id="back-to-top" class="back-to-top">
+        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="icon arrow-up"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a>
+    </div>
+
+
+            
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="site-info">©&nbsp;2020–2020&nbsp;zxzhu</div><div class="powered-by">Powered by <a href="https://github.com/gohugoio/hugo" target="_blank" rel="noopener">Hugo</a> | Theme is <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></div>
+
+            
+
+
+            
+        </div>
+    </footer>
+
+
+        </div>
+        
+
+        
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.css" integrity="sha384-BdGj8xC2eZkQaxoQ8nSLefg4AV4/AwB3Fj+8SUSo7pnKP6Eoy18liIKTPn9oBYNG" crossorigin="anonymous" />
+<script>
+    if (typeof renderMathInElement === 'undefined') {
+        var getScript = (options) => {
+            var script = document.createElement('script');
+            script.defer = true;
+            script.crossOrigin = 'anonymous';
+            Object.keys(options).forEach((key) => {
+                script[key] = options[key];
+            });
+            document.body.appendChild(script);
+        };
+        getScript({
+            src: 'https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/katex.min.js',
+            integrity: 'sha384-JiKN5O8x9Hhs/UE5cT5AAJqieYlOZbGT3CHws/y97o3ty4R7/O5poG9F3JoiOYw1',
+            onload: () => {
+                getScript({
+                    src: 'https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/contrib/mhchem.min.js',
+                    integrity: 'sha384-oa0lfxCGjaU1LdYckhq8LZcP+JTf8cyJXe69O6VE6UrShzWveT6KiCElJrck/stm',
+                    onload: () => {
+                        getScript({
+                            src: 'https://cdn.jsdelivr.net/npm/katex@0.11.0/dist/contrib/auto-render.min.js',
+                            integrity: 'sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI',
+                            onload: () => {
+                                renderKaTex();
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    } else {
+        renderKaTex();
+    }
+    function renderKaTex() {
+        renderMathInElement(
+            document.body,
+            {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\(", right: "\\)", display: false}
+                ]
+            }
+        );
+    }
+</script>
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
+
+<script>
+    mediumZoom(document.querySelectorAll('div.post-body img'), {
+        background: 'hsla(var(--color-bg-h), var(--color-bg-s), var(--color-bg-l), 0.95)'
+    })
+</script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/instant.page@3.0.0/instantpage.min.js" type="module" defer></script>
+
+
+
+
+    
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+
+
+
+    </body>
+</html>
