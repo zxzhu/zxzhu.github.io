@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">zxzhu&#39;s blog</title>
     <subtitle type="html">zxzhu | 个人博客</subtitle>
-    <updated>2020-12-21T17:31:32&#43;08:00</updated>
+    <updated>2020-12-21T20:40:05&#43;08:00</updated>
     <id>https://zxzhu.github.io/</id>
     <link rel="alternate" type="text/html" href="https://zxzhu.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://zxzhu.github.io/atom.xml" />
@@ -16,6 +16,52 @@
             </author>
     <rights>保留本文作者及本文链接的前提下，非商业用途随意转载分享。</rights>
     <generator uri="https://gohugo.io/" version="0.78.2">Hugo</generator>
+        <entry>
+            <title type="text">约定</title>
+            <link rel="alternate" type="text/html" href="https://zxzhu.github.io/posts/vague_agreement/" />
+            <id>https://zxzhu.github.io/posts/vague_agreement/</id>
+            <updated>2020-12-21T20:39:34&#43;08:00</updated>
+            <published>2020-12-21T19:13:05&#43;08:00</published>
+            <author>
+                    <name>zxzhu</name>
+                    <uri>https://zxzhu.github.io</uri>
+                    <email>hzauzxzhu@gmail.com</email>
+                    </author>
+            <rights>保留本文作者及本文链接的前提下，非商业用途随意转载分享。</rights><summary type="html">我对约定的理解是两个对象 现在 决定将来某个时间点 做一件事情。约定让人充满期待，约定富含……</summary>
+            
+                <content type="html">&lt;p&gt;我对约定的理解是两个对象 现在 决定将来某个时间点 做一件事情。约定让人充满期待，约定富含浪漫感。「如果你说你在下午四点来，从三点钟开始，我就开始感觉很快乐，时间越临近，我就越来越感到快乐」大概就是这种感觉吧，期待的过程中总是让人喜悦。&lt;/p&gt;
+&lt;p&gt;如果你说你不知道三点来还是四点来，随便什么时候可能都会来，那我不会感受到期待的喜悦，而只有等待的焦虑。最后你来了，那这焦虑也会被喜悦平息，但是你没来，焦虑还是会平息，但没有了喜悦，只有失望。&lt;/p&gt;
+&lt;p&gt;所以，尽量不要做随时都可能实现的约定。&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://zxzhu.github.io/categories/writing/" term="writing" label="writing" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://zxzhu.github.io/tags/life/" term="life" label="life" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">柱状图</title>
             <link rel="alternate" type="text/html" href="https://zxzhu.github.io/posts/bar_plot/" />

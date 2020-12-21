@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://zxzhu.github.io/categories/</loc>
+    <lastmod>2020-12-21T20:39:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zxzhu.github.io/tags/life/</loc>
+    <lastmod>2020-12-21T20:39:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zxzhu.github.io/posts/</loc>
+    <lastmod>2020-12-21T20:39:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zxzhu.github.io/tags/</loc>
+    <lastmod>2020-12-21T20:39:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zxzhu.github.io/categories/writing/</loc>
+    <lastmod>2020-12-21T20:39:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zxzhu.github.io/</loc>
+    <lastmod>2020-12-21T20:39:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zxzhu.github.io/posts/vague_agreement/</loc>
+    <lastmod>2020-12-21T20:39:34+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://zxzhu.github.io/tags/barplot/</loc>
     <lastmod>2020-12-11T16:17:29+08:00</lastmod>
   </url>
@@ -13,28 +48,8 @@
   </url>
   
   <url>
-    <loc>https://zxzhu.github.io/categories/</loc>
-    <lastmod>2020-12-11T16:17:29+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://zxzhu.github.io/tags/ggplot2/</loc>
     <lastmod>2020-12-11T16:17:29+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zxzhu.github.io/posts/</loc>
-    <lastmod>2020-12-11T16:17:29+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zxzhu.github.io/tags/</loc>
-    <lastmod>2020-12-11T16:17:29+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zxzhu.github.io/</loc>
-    <lastmod>2020-12-21T17:30:30+08:00</lastmod>
   </url>
   
   <url>
@@ -60,16 +75,6 @@
   <url>
     <loc>https://zxzhu.github.io/posts/imgurl/</loc>
     <lastmod>2020-12-10T20:17:18+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zxzhu.github.io/tags/life/</loc>
-    <lastmod>2020-12-01T10:52:43+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zxzhu.github.io/categories/writing/</loc>
-    <lastmod>2020-12-01T10:52:43+08:00</lastmod>
   </url>
   
   <url>
