@@ -33,17 +33,17 @@
   </url>
   
   <url>
-    <loc>https://zxzhu.github.io/posts/</loc>
-    <lastmod>2020-12-11T16:17:29+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://zxzhu.github.io/tags/</loc>
     <lastmod>2020-12-11T16:17:29+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://zxzhu.github.io/posts/bar_plot/</loc>
+    <loc>https://zxzhu.github.io/tech/</loc>
+    <lastmod>2020-12-11T16:17:29+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zxzhu.github.io/tech/bar_plot/</loc>
     <lastmod>2020-12-11T16:17:29+08:00</lastmod>
   </url>
   
@@ -63,8 +63,13 @@
   </url>
   
   <url>
-    <loc>https://zxzhu.github.io/posts/imgurl/</loc>
+    <loc>https://zxzhu.github.io/tech/imgurl/</loc>
     <lastmod>2020-12-10T20:17:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zxzhu.github.io/life/</loc>
+    <lastmod>2020-12-01T10:52:43+08:00</lastmod>
   </url>
   
   <url>
@@ -78,17 +83,17 @@
   </url>
   
   <url>
-    <loc>https://zxzhu.github.io/posts/miss/</loc>
+    <loc>https://zxzhu.github.io/life/miss/</loc>
     <lastmod>2020-12-01T10:52:43+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://zxzhu.github.io/posts/social-software-to-me/</loc>
+    <loc>https://zxzhu.github.io/life/social-software-to-me/</loc>
     <lastmod>2020-11-26T16:25:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://zxzhu.github.io/posts/hello-world/</loc>
+    <loc>https://zxzhu.github.io/tech/hello-world/</loc>
     <lastmod>2020-12-10T20:08:41+08:00</lastmod>
   </url>
   

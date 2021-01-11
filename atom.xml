@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">zxzhu&#39;s blog</title>
     <subtitle type="html">zxzhu | 个人博客</subtitle>
-    <updated>2021-01-11T15:17:01&#43;08:00</updated>
+    <updated>2021-01-11T16:33:38&#43;08:00</updated>
     <id>https://zxzhu.github.io/</id>
     <link rel="alternate" type="text/html" href="https://zxzhu.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://zxzhu.github.io/atom.xml" />
@@ -18,8 +18,8 @@
     <generator uri="https://gohugo.io/" version="0.78.2">Hugo</generator>
         <entry>
             <title type="text">柱状图</title>
-            <link rel="alternate" type="text/html" href="https://zxzhu.github.io/posts/bar_plot/" />
-            <id>https://zxzhu.github.io/posts/bar_plot/</id>
+            <link rel="alternate" type="text/html" href="https://zxzhu.github.io/tech/bar_plot/" />
+            <id>https://zxzhu.github.io/tech/bar_plot/</id>
             <updated>2020-12-11T16:17:29&#43;08:00</updated>
             <published>2020-12-11T16:02:21&#43;08:00</published>
             <author>
@@ -503,8 +503,8 @@
     
         <entry>
             <title type="text">用于Markdown的图床</title>
-            <link rel="alternate" type="text/html" href="https://zxzhu.github.io/posts/imgurl/" />
-            <id>https://zxzhu.github.io/posts/imgurl/</id>
+            <link rel="alternate" type="text/html" href="https://zxzhu.github.io/tech/imgurl/" />
+            <id>https://zxzhu.github.io/tech/imgurl/</id>
             <updated>2020-12-10T20:17:18&#43;08:00</updated>
             <published>2020-12-10T16:01:19&#43;08:00</published>
             <author>
@@ -578,108 +578,9 @@
         </entry>
     
         <entry>
-            <title type="text">错过</title>
-            <link rel="alternate" type="text/html" href="https://zxzhu.github.io/posts/miss/" />
-            <id>https://zxzhu.github.io/posts/miss/</id>
-            <updated>2020-12-01T10:52:43&#43;08:00</updated>
-            <published>2020-12-01T10:28:51&#43;08:00</published>
-            <author>
-                    <name>zxzhu</name>
-                    <uri>https://zxzhu.github.io</uri>
-                    <email>hzauzxzhu@gmail.com</email>
-                    </author>
-            <rights>保留本文作者及本文链接的前提下，非商业用途随意转载分享。</rights><summary type="html">人永远不知道，谁哪次不经意的跟你说了再见之后，就真的不会再见了。 ​ 《千与千寻 》 「竟然……</summary>
-            
-                <content type="html">&lt;blockquote&gt;
-&lt;p&gt;人永远不知道，谁哪次不经意的跟你说了再见之后，就真的不会再见了。&lt;/p&gt;
-&lt;p&gt;​                                                                                                                 《千与千寻 》&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;「竟然在这里碰到了！你怎么往回走，是要去哪儿呢？吃饭吗？现在才10点呀」&lt;/p&gt;
-&lt;p&gt;「要不要打招呼呢？大声喊出你的名字，然后向路另一侧的你挥挥手，说一声早上好」&lt;/p&gt;
-&lt;p&gt;「你的身影那么孤独，仿佛真的脱离了生活」&lt;/p&gt;
-&lt;p&gt;「你走了，消失得无影无踪，像风一样」&lt;/p&gt;
-&lt;p&gt;「」&lt;/p&gt;
-</content>
-            
-            
-            
-            
-            
-                
-                    
-                        
-                            
-                            
-                            
-                                <category scheme="https://zxzhu.github.io/categories/writing/" term="writing" label="writing" />
-                            
-                        
-                    
-                
-                    
-                        
-                            
-                            
-                            
-                                <category scheme="https://zxzhu.github.io/tags/life/" term="life" label="life" />
-                            
-                        
-                    
-                
-            
-        </entry>
-    
-        <entry>
-            <title type="text">社交软件带给我的</title>
-            <link rel="alternate" type="text/html" href="https://zxzhu.github.io/posts/social-software-to-me/" />
-            <id>https://zxzhu.github.io/posts/social-software-to-me/</id>
-            <updated>2020-11-26T16:25:26&#43;08:00</updated>
-            <published>2020-11-26T15:42:34&#43;08:00</published>
-            <author>
-                    <name>zxzhu</name>
-                    <uri>https://zxzhu.github.io</uri>
-                    <email>hzauzxzhu@gmail.com</email>
-                    </author>
-            <rights>保留本文作者及本文链接的前提下，非商业用途随意转载分享。</rights><summary type="html">大概10年前，我有了第一部手机，金立，主要是方便联系在外地打工的父母。高中时候用过诺……</summary>
-            
-                <content type="html">&lt;p&gt;大概10年前，我有了第一部手机，金立，主要是方便联系在外地打工的父母。高中时候用过诺基亚，然后换了不知名智能手机，还被老师没收过哈哈。高中有计算机课程，那时候开始才有机会接触一下电脑，大学当学习委员的时候，需要拷贝ppt到u盘里，我不知道按住ctrl可以选多个文件，只好一个个拷贝，然后被其他学委吐槽(囧)，大二终于有了自己的电脑。&lt;/p&gt;
-&lt;p&gt;虽然接触电脑晚，但是十年前有诺基亚也可以用QQ了。那是一个初中同学给的QQ号，我一直用到现在。还记得当时我在三楼顶上随机加了很多好友，每个人都会聊几句。慢慢的，经过时间的筛选之后，就和固定的几个好友聊天。感觉我和他们说过很多很多话。&lt;/p&gt;
-&lt;p&gt;大学的时候，社交软件变成了QQ，微信和微博，facebook和twitter也耍过，不过只是出于好奇，对我来说没有多少社交属性。快毕业的时候，我发现我没有很多话和他们说了，只有喝醉酒的时候会打电话说想你了，最近过得好吗之类的话。这种话怎么能天天问呢。「我那些毫无交集的朋友啊，如何才能不要愈行愈远呢？」&lt;/p&gt;
-&lt;p&gt;媒介只是媒介，变化的只是我自己所处的环境和想法，无论是网络、电话、邮箱还是见面，只要你想。&lt;/p&gt;
-</content>
-            
-            
-            
-            
-            
-                
-                    
-                        
-                            
-                            
-                            
-                                <category scheme="https://zxzhu.github.io/categories/writing/" term="writing" label="writing" />
-                            
-                        
-                    
-                
-                    
-                        
-                            
-                            
-                            
-                                <category scheme="https://zxzhu.github.io/tags/life/" term="life" label="life" />
-                            
-                        
-                    
-                
-            
-        </entry>
-    
-        <entry>
             <title type="text">Hello World</title>
-            <link rel="alternate" type="text/html" href="https://zxzhu.github.io/posts/hello-world/" />
-            <id>https://zxzhu.github.io/posts/hello-world/</id>
+            <link rel="alternate" type="text/html" href="https://zxzhu.github.io/tech/hello-world/" />
+            <id>https://zxzhu.github.io/tech/hello-world/</id>
             <updated>2020-12-10T20:08:41&#43;08:00</updated>
             <published>2020-11-24T19:01:46&#43;08:00</published>
             <author>
@@ -751,7 +652,7 @@ $$&lt;/p&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;You can create footnotes like this&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;https://zxzhu.github.io/posts/hello-world/#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;You can create footnotes like this&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;https://zxzhu.github.io/tech/hello-world/#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://zxzhu.github.io/&#34;&gt;home&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;test&lt;/code&gt; &lt;em&gt;test&lt;/em&gt; &lt;strong&gt;test&lt;/strong&gt; &lt;del&gt;test&lt;/del&gt; &lt;u&gt;test&lt;/u&gt; ❤️ ==test==&lt;/p&gt;
 &lt;hr&gt;
@@ -759,7 +660,7 @@ $$&lt;/p&gt;
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Here is the &lt;em&gt;text&lt;/em&gt; of the &lt;strong&gt;footnote 1&lt;/strong&gt;. &lt;a href=&#34;https://zxzhu.github.io/posts/hello-world/#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Here is the &lt;em&gt;text&lt;/em&gt; of the &lt;strong&gt;footnote 1&lt;/strong&gt;. &lt;a href=&#34;https://zxzhu.github.io/tech/hello-world/#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
