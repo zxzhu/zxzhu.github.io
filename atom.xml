@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">zxzhu&#39;s blog</title>
     <subtitle type="html">zxzhu | 个人博客</subtitle>
-    <updated>2021-01-11T16:38:02&#43;08:00</updated>
+    <updated>2021-01-26T21:23:30&#43;08:00</updated>
     <id>https://zxzhu.github.io/</id>
     <link rel="alternate" type="text/html" href="https://zxzhu.github.io/" />
     <link rel="self" type="application/atom&#43;xml" href="https://zxzhu.github.io/atom.xml" />
@@ -15,7 +15,36 @@
                 <email>hzauzxzhu@gmail.com</email>
             </author>
     <rights>保留本文作者及本文链接的前提下，非商业用途随意转载分享。</rights>
-    <generator uri="https://gohugo.io/" version="0.78.2">Hugo</generator>
+    <generator uri="https://gohugo.io/" version="0.80.0">Hugo</generator>
+        <entry>
+            <title type="text">Test2</title>
+            <link rel="alternate" type="text/html" href="https://zxzhu.github.io/tech/test2/" />
+            <id>https://zxzhu.github.io/tech/test2/</id>
+            <updated>2021-01-26T21:23:15&#43;08:00</updated>
+            <published>2021-01-26T21:20:54&#43;08:00</published>
+            <author>
+                    <name>zxzhu</name>
+                    <uri>https://zxzhu.github.io</uri>
+                    <email>hzauzxzhu@gmail.com</email>
+                    </author>
+            <rights>保留本文作者及本文链接的前提下，非商业用途随意转载分享。</rights><summary type="html">test test</summary>
+            
+                <content type="html">&lt;h3 id=&#34;test&#34;&gt;test&lt;/h3&gt;
+&lt;p&gt;test&lt;/p&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">柱状图</title>
             <link rel="alternate" type="text/html" href="https://zxzhu.github.io/tech/bar_plot/" />
