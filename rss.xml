@@ -23,13 +23,13 @@
         
             <copyright>保留本文作者及本文链接的前提下，非商业用途随意转载分享。</copyright>
         
-        <lastBuildDate>Wed, 17 Mar 2021 16:08:00 &#43;0800</lastBuildDate>
+        <lastBuildDate>Wed, 17 Mar 2021 16:11:34 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://zxzhu.github.io/rss.xml" />
         
         
             <item>
-                <title>ss tutorial</title>
+                <title>shadowsocks tutorial</title>
                 <link>https://zxzhu.github.io/tech/ss_tutorial/</link>
                 <guid isPermaLink="true">https://zxzhu.github.io/tech/ss_tutorial/</guid>
                 <pubDate>Wed, 17 Mar 2021 16:01:19 &#43;0800</pubDate>
@@ -38,8 +38,7 @@
                 
                 <copyright>保留本文作者及本文链接的前提下，非商业用途随意转载分享。</copyright>
                 
-                    <description>&lt;h3 id=&#34;ss-toturial&#34;&gt;ss toturial&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://gfw.report/blog/ss_tutorial/zh/&#34;&gt;参考&lt;/a&gt;&lt;/p&gt;
+                    <description>&lt;p&gt;&lt;a href=&#34;https://gfw.report/blog/ss_tutorial/zh/&#34;&gt;参考&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;安装-shadowsocks-libev&#34;&gt;安装 shadowsocks-libev&lt;/h4&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -49,9 +48,11 @@
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;sudo yum -y install epel-release
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;c1&#34;&gt;## CentOS&lt;/span&gt;
+sudo yum -y install epel-release
 sudo yum -y install snapd
 sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; --now snapd.socket
 sudo ln -s /var/lib/snapd/snap /snap
