@@ -23,7 +23,7 @@
         
             <copyright>保留本文作者及本文链接的前提下，非商业用途随意转载分享。</copyright>
         
-        <lastBuildDate>Wed, 17 Mar 2021 16:11:34 &#43;0800</lastBuildDate>
+        <lastBuildDate>Wed, 17 Mar 2021 16:15:39 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://zxzhu.github.io/rss.xml" />
         
@@ -77,9 +77,9 @@ sudo snap install shadowsocks-libev --edge
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo vim /var/snap/shadowsocks-libev/common/etc/shadowsocks-libev/config.json
 &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
     &lt;span class=&#34;s2&#34;&gt;&amp;#34;server&amp;#34;&lt;/span&gt;:&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;::0&amp;#34;&lt;/span&gt;,&lt;span class=&#34;s2&#34;&gt;&amp;#34;0.0.0.0&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;,
-    &lt;span class=&#34;s2&#34;&gt;&amp;#34;server_port&amp;#34;&lt;/span&gt;:1536,
+    &lt;span class=&#34;s2&#34;&gt;&amp;#34;server_port&amp;#34;&lt;/span&gt;:8388,
     &lt;span class=&#34;s2&#34;&gt;&amp;#34;encryption_method&amp;#34;&lt;/span&gt;:&lt;span class=&#34;s2&#34;&gt;&amp;#34;chacha20-ietf-poly1305&amp;#34;&lt;/span&gt;,
-    &lt;span class=&#34;s2&#34;&gt;&amp;#34;password&amp;#34;&lt;/span&gt;:&lt;span class=&#34;s2&#34;&gt;&amp;#34;9nyyTBcNzNNucZZ6Wtk+tw==&amp;#34;&lt;/span&gt;,
+    &lt;span class=&#34;s2&#34;&gt;&amp;#34;password&amp;#34;&lt;/span&gt;:&lt;span class=&#34;s2&#34;&gt;&amp;#34;example_passwd&amp;#34;&lt;/span&gt;,
     &lt;span class=&#34;s2&#34;&gt;&amp;#34;mode&amp;#34;&lt;/span&gt;:&lt;span class=&#34;s2&#34;&gt;&amp;#34;tcp_only&amp;#34;&lt;/span&gt;,
     &lt;span class=&#34;s2&#34;&gt;&amp;#34;fast_open&amp;#34;&lt;/span&gt;:false
 &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
@@ -110,7 +110,7 @@ openssl rand -base64 &lt;span class=&#34;m&#34;&gt;16&lt;/span&gt;
 &lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;sudo yum install -y ufw
 systemctl stop firewalld.service
 sudo ufw allow ssh
-sudo ufw allow 1536/tcp
+sudo ufw allow 8388/tcp
 sudo ufw &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
