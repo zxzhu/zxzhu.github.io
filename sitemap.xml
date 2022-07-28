@@ -4,7 +4,17 @@
   
   <url>
     <loc>https://zxzhu.github.io/life/</loc>
-    <lastmod>2021-05-03T01:55:43+08:00</lastmod>
+    <lastmod>2021-05-23T18:29:22+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zxzhu.github.io/life/new_start/</loc>
+    <lastmod>2021-05-23T18:29:22+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zxzhu.github.io/</loc>
+    <lastmod>2021-05-23T18:29:22+08:00</lastmod>
   </url>
   
   <url>
@@ -14,11 +24,6 @@
   
   <url>
     <loc>https://zxzhu.github.io/tags/</loc>
-    <lastmod>2021-05-03T01:55:43+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zxzhu.github.io/</loc>
     <lastmod>2021-05-03T01:55:43+08:00</lastmod>
   </url>
   
@@ -53,17 +58,27 @@
   </url>
   
   <url>
+    <loc>https://zxzhu.github.io/categories/</loc>
+    <lastmod>2020-12-22T19:24:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zxzhu.github.io/categories/writing/</loc>
+    <lastmod>2020-12-22T19:24:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zxzhu.github.io/life/vague_agreement/</loc>
+    <lastmod>2020-12-22T19:24:06+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://zxzhu.github.io/tags/barplot/</loc>
     <lastmod>2020-12-11T16:17:29+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://zxzhu.github.io/categories/bioinformatics/</loc>
-    <lastmod>2020-12-11T16:17:29+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zxzhu.github.io/categories/</loc>
     <lastmod>2020-12-11T16:17:29+08:00</lastmod>
   </url>
   
@@ -95,11 +110,6 @@
   <url>
     <loc>https://zxzhu.github.io/tech/imgurl/</loc>
     <lastmod>2020-12-10T20:17:18+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zxzhu.github.io/categories/writing/</loc>
-    <lastmod>2020-12-01T10:52:43+08:00</lastmod>
   </url>
   
   <url>
